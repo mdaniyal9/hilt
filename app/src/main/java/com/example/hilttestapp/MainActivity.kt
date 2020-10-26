@@ -78,9 +78,25 @@ interface SomeInterface{
 @Module
 class MyModule{
 
+//    @Impl1
+    @Singleton
+    @Provides
+    fun provideSomeString1():String{
+        return "some string1"
+    }
+
+//    @Impl2
+    @Singleton
+    @Provides
+    fun provideSomeString2():String{
+        return "some string2"
+    }
+
+
     @Impl1
     @Singleton
     @Provides
+//    fun provideSomeInterface1(@Impl2 someString: String):SomeInterface{
     fun provideSomeInterface1():SomeInterface{
         return SomeInterfaceImpl1()
     }
